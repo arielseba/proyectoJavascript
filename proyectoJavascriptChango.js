@@ -5,7 +5,18 @@ let prueba;
 let totalCompraImporte=0;
 console.log("que nos trae da la pagina anterior" , carritoA)
 let contador=-1;
-     
+$("#jqueryCarrito").fadeIn(3000);
+$("#jqueryCarrito").slideDown("fast");
+
+$(".logo").animate({
+    width: '150px',
+    opacity: '1'},"slow", function(){console.log("animate")});
+
+$(".carritoAnimacion").css("color","green")
+.slideDown(2000)
+.delay(2000)
+.slideUp(2000);
+
 /*$(document).ready(function(){
     console.log("EL DOM ESTA LISTO");
 });*/
@@ -67,18 +78,7 @@ let contador=-1;
             console.log("Contador: ", contador);
                 }
              
-            $("#jqueryCarrito").fadeIn(3000);
-            $("#jqueryCarrito").slideDown("fast");
-
-            $(".logo").animate({
-                width: '150px',
-                opacity: '1'},"slow", function(){console.log("animate")});
-        
-            $(".carritoAnimacion").css("color","green")
-            .slideDown(2000)
-            .delay(2000)
-            .slideUp(2000);
-            
+     
             
             
          
