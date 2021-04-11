@@ -1,0 +1,78 @@
+.carritoAnimacion{
+    font-size: 50px;
+    margin-top: 20px;
+    text-align: center  ;
+}
+.logo{
+    width: 50px;
+    opacity: 0.3;
+}
+.nav1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer1{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-top: 100px;
+  background-color:black
+    
+   }
+.pFooter{
+    text-align: justify;
+    margin: 20px;
+}
+.nav__ul{
+    list-style: none;
+}
+.nav__ul li{
+    display: inline-block;
+     
+}
+.nav__ul li a{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace  ;
+    color: black;
+    padding: 50px 50px 50px 50px;
+}
+.card{
+    margin: 20px;
+    margin-top: 20px;
+    height:380px;
+    width:250px;
+    border: solid 1px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.imgcard{
+height: 200px;
+width: 200px;
+
+}
+p{
+    text-align: center;
+}
+
+
+.thTitulo{
+color: green;
+font-size: 150%;
+
+}
+td{
+    text-align: center;
+    width: 200px;
+}
+
+
+
+
+/*
+
+.card:hover{
+    transform: translateY(-30px);
+    transition-duration: 1s;
+}/*
