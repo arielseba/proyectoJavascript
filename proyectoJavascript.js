@@ -3,6 +3,7 @@ $(".logo").animate({
     width: '150px',
     opacity: '1'},"slow", );
 
+
 let preguntarComprar="";
 let nombre="";
 let totalImporte=0;
@@ -25,8 +26,7 @@ class gorrasLisas {
 }
 
 class carrito{
-    constructor(descripcionCarrito,precioCarrito,cantidadCarrito){
-        this.descripcionCarrito=descripcionCarrito;
+    constructor(descripcionCarrito,precioCarrito,cantidadCarrito){this.descripcionCarrito=descripcionCarrito;
         this.precioCarrito=precioCarrito;
         this.cantidadCarrito=cantidadCarrito;
         }
@@ -143,7 +143,8 @@ function productoAgregado(id){
         if(verificador===0  ){
             console.log("Termine de recorrer el carrito y sumo 1 unidad y pusheo el producto en el caso de que no se encuentre el id");
             totalProductos[id-1].cantidadG=totalProductos[id-1].cantidadG+1;
-            carritoA.push(totalProductos[id-1]);    }
+            carritoA.push(totalProductos[id-1]);  
+              }
             console.log(localStorage.carritoA);
     }
   
@@ -158,4 +159,8 @@ function productoAgregado(id){
     localStorage.setItem("carritoA",JSON.stringify(carritoA));
     console.log("---------------------------------------------------------");
 }
+
+
+    
+
 

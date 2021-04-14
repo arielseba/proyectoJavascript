@@ -1,21 +1,17 @@
+$(document).ready(function(){
 
-    
+
+
 let carritoA=JSON.parse(localStorage.getItem("carritoA"));
-let prueba;
-let totalCompraImporte=0;
 console.log("que nos trae da la pagina anterior" , carritoA)
-let contador=-1;
+total=0;
+
 $("#jqueryCarrito").fadeIn(3000);
 $("#jqueryCarrito").slideDown("fast");
 
 $(".logo").animate({
     width: '150px',
-    opacity: '1'},"slow", function(){console.log("animate")});
-
-$(".carritoAnimacion").css("color","green")
-.slideDown(2000)
-.delay(2000)
-.slideUp(2000);
+    opacity: '1'},"slow");
 
 /*$(document).ready(function(){
     console.log("EL DOM ESTA LISTO");
@@ -23,7 +19,7 @@ $(".carritoAnimacion").css("color","green")
 
             for(const elem of carritoA){
            
-                $("#jqueryCarrito").append(`<tr><td id="${elem.id} "> ${elem.id}  </td>
+                $("#jqueryCarrito").append(`<tr id="producto${elem.id}" style="font-weight:600"><td id="${elem.id} "> ${elem.id}  </td>
                                 <td> ${elem.descripcion}  </td>
                                 <td> $ ${elem.precio} </td>
                                 <td id="CantidadG${elem.id}">${elem.cantidadG}</td>
@@ -31,9 +27,12 @@ $(".carritoAnimacion").css("color","green")
                                 <td ><button class = "btn btn-success " id="botonAgregar${elem.id}"> + </button>
                                 <button class = "btn btn-warning" id="botonQuitar${elem.id}"> - </button>
                                 <button class = "btn btn-danger" id="botonEliminar${elem.id}"> x </button>   </td>
-                                <td>${contador=contador+1}</td><tr>
+                                ${total=total+(elem.cantidadG*elem.precio)}
+                               <tr>
                                 <hr> 
                                 `);
+
+                
                 
                                //funcion de agregar unidades de productos del carrito
                                 $(`#botonAgregar${elem.id}`).on('click', function(){
@@ -42,8 +41,12 @@ $(".carritoAnimacion").css("color","green")
                                     console.log(elem);
                                    $(`#CantidadG${elem.id}`).html(elem.cantidadG);
                                    $(`#CantidadT${elem.id}`).html("$ "+ elem.cantidadG*elem.precio);
+                                   total=total+elem.precio;
+                                   $(`#totalImporteChango`).html(` <h3 style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
+                                   </div>`);
                                    localStorage.setItem("carritoA",JSON.stringify(carritoA));
-                                   
+                                    
+
                                 })
                         
                                  //funcion de quitar unidades de productos del carrito
@@ -54,34 +57,45 @@ $(".carritoAnimacion").css("color","green")
                                     console.log(elem);
                                     $(`#CantidadG${elem.id}`).html(elem.cantidadG);
                                     $(`#CantidadT${elem.id}`).html("$ "+ elem.cantidadG*elem.precio);
-                                    localStorage.setItem("carritoA",JSON.stringify(carritoA));  
+                                    total=total-elem.precio;
+                                    $(`#totalImporteChango`).html(` <h3 style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
+                                   </div>`);
+                                    localStorage.setItem("carritoA",JSON.stringify(carritoA)); 
+                                   
                                     }
                                 })
                                 //funcion de eliminar productos del carrito
-                              /* $(`#botonEliminar${elem.id}`).on('click', function(){
-                                  $(`#id${elem.id}`).remove();
-                                  delete carritoA[elem.id];
-                                    console.log(`Eliminaste el producto :  ${elem.descripcion}`);
-                                    localStorage.setItem("carritoA",JSON.stringify(carritoA));
-                                    for(const elemento of carritoA){
-                                        if (elemento.id==`${elem.id}`){
-                                            console.log("ustede quiere eliminar el producto: ", elemento.descripcion);
-                                            carritoA.splice();
-                               
-                                        }
+                              $(`#botonEliminar${elem.id}`).on('click', function(){
+                                  
+                                    const busquedaId = carritoA.findIndex(elemento => {
+                                    return elemento.id === elem.id;});
+                                    //$(`#producto${elem.id`).slideDown(3000);
+                                    $(`#producto${elem.id}`).remove();
+                                    carritoA.splice(busquedaId,1);   
+                                    total=total-(elem.precio*elem.cantidadG);                                
+                                    $(`#totalImporteChango`).html(` <h3 style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
+                                    </div>`);  
+
+                                    localStorage.setItem("carritoA",JSON.stringify(carritoA)); 
+                                   
                                     }
-                                       $("#j").fadeOut(3000);
-                                })*/
+                                     
+                              )
+                    
+                           
+                                
 
-              
-
-            console.log("Contador: ", contador);
+ 
                 }
-             
-     
+
             
-            
-         
-    
-            
-          
+                
+                if(carritoA!=undefined){
+                    $("#totalImporteChango").append(`<div>
+                               <h3 style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
+                    </div>`)    }
+               
+                $("#vaciarCarrito").on("click", function(){                            
+                    window.localStorage.removeItem("carritoA");});  
+           
+                });

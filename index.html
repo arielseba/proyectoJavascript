@@ -211,7 +211,7 @@
 
 <!--	Newsletter	-->
 <div id="news" style="margin-top: 15%;">
-	<form >
+	<form  id="formulario">
 		<div class="container">
 			<div class="row" >
 				<div class="col-xs-12	col-sm-12	col-md-6	col-lg-4"  >
@@ -221,29 +221,29 @@
 				<div class="form-group row col-xs-12	col-sm-12	col-md-12	col-lg-8"  >
 					<div class="form-group col-xs-12	col-sm-12	col-md-6	col-lg-6" >
 						<label for="nombre" style="font-size: large;margin-top: 5%;">Nombre</label>		
-						<input type="text"  class="form-control" style="height: 60%;" name="nombre" placeholder="Ingrese su Nombre" id="nombre">
+						<input type="text"  id="nombre" class="form-control" style="height: 60%;" name="nombre" placeholder="Ingrese su Nombre" id="nombre">
 					</div><br>
 												
 					<div class="form-group col-xs-12	col-sm-12	col-md-6	col-lg-6" >
 						<label for="apellido"  style="font-size: large;margin-top: 5%;" >Apellido</label>		
-						<input type="text" class="form-control" style="height: 60%;" name="apellido" placeholder="Ingrese su Apellido" id="apellido">
+						<input type="text" id="apellido" class="form-control" style="height: 60%;" name="apellido" placeholder="Ingrese su Apellido" id="apellido">
 					</div><br>	
 						
 					<div class="form-group col-xs-12	col-sm-12	col-md-12	col-lg-4 " style="margin-bottom: 3%; margin-top: 5%;	">
 						<label for="email"  style="font-size: large; margin-top: 2%;	">E-mail	</label>	
-						<input type="text" class="form-control" style="height: 60%;" name="email" placeholder="Ingrese su E-mail" id="">
+						<input type="text" id="mail" class="form-control" style="height: 60%;" name="email" placeholder="Ingrese su E-mail" id="">
 					</div>
 				
 					<div class="form-group col-xs-12 col-sm-6 col-md-6	col-lg-2" style="margin-top: 9%;width: auto;"   >
-						<label for="estado"  style="font-size: large;">Estado Civil</label>		
-						<select name="estado"  style="font-size:medium	 ">
+						<label for="estado" id="estadoCivil" style="font-size: large;">Estado Civil</label>		
+						<select name="estado" id="estadoCivil" style="font-size:medium	 ">
 							<option class="form-control" value="SOLTERO" style="font-size:small">Soltero/a</option>
 							<option class="form-control" value="CASADO" style="font-size:small ">Casado/a</option>
 						</select>
 					</div>	
 				
 					<div   class="form-check col-xs-12 col-sm-6 col-md-6 col-lg-3" style="margin-top: 9%; width: auto;" >
-						<input type="radio" name="sexo" id="Femenino" >
+						<input type="radio" id="sexo" name="sexo" id="Femenino" >
 						<label for="" style="font-size: medium;">Femenino</label>
 						<input type="radio" name="sexo" id="Masculino" >
 						<label for="" style="font-size: medium;">Masculino</label>
@@ -262,7 +262,7 @@
 									
 					<div class="form-group col-xs-12	col-sm-12	col-md-5	col-lg-12	">
 						<input style="font-size:small" type="reset" class=" btn btn-dark" name="limpiar" value="Limpiar formulario">
-						<input  style="font-size:small	"type="submit" class="btn btn-dark" name="limpiar" value="Enviar">
+						<input  style="font-size:small	"type="submit" class="btn btn-dark" id="enviar" name="limpiar" value="Enviar">
 					</div>
 				</div>	
 			</div>
