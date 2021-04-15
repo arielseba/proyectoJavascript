@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 
 
 
@@ -19,14 +19,16 @@ $(".logo").animate({
 
             for(const elem of carritoA){
            
-                $("#jqueryCarrito").append(`<tr id="producto${elem.id}" style="font-weight:600"><td id="${elem.id} "> ${elem.id}  </td>
+                $("#jqueryCarrito").append(`<tr id="producto${elem.id}" style="font-weight:700"><td id="${elem.id} "> ${elem.id}  </td>
                                 <td> ${elem.descripcion}  </td>
-                                <td> $ ${elem.precio} </td>
-                                <td id="CantidadG${elem.id}">${elem.cantidadG}</td>
+                                <td style="width: 20%"> $ ${elem.precio} </td>
+                                <td><button  class = "btn-xs btn-success " id="botonAgregar${elem.id}"> + </button></td>
+                                <td id="CantidadG${elem.id}"> ${elem.cantidadG}</td>
+                                <td> <button class = "btn-xs btn-warning" id="botonQuitar${elem.id}"> - </button></td>
                                 <td id="CantidadT${elem.id}"> $ ${elem.precio * elem.cantidadG} </td>
-                                <td ><button class = "btn btn-success " id="botonAgregar${elem.id}"> + </button>
-                                <button class = "btn btn-warning" id="botonQuitar${elem.id}"> - </button>
-                                <button class = "btn btn-danger" id="botonEliminar${elem.id}"> x </button>   </td>
+                               
+                               
+                                <td><button class = "btn-xs btn-danger" id="botonEliminar${elem.id}"> x </button>   </td>
                                 ${total=total+(elem.cantidadG*elem.precio)}
                                <tr>
                                 <hr> 
@@ -69,7 +71,7 @@ $(".logo").animate({
                                   
                                     const busquedaId = carritoA.findIndex(elemento => {
                                     return elemento.id === elem.id;});
-                                    //$(`#producto${elem.id`).slideDown(3000);
+                                    $(`#producto${elem.id}`).fadeOut(1000,function(){
                                     $(`#producto${elem.id}`).remove();
                                     carritoA.splice(busquedaId,1);   
                                     total=total-(elem.precio*elem.cantidadG);                                
@@ -77,7 +79,7 @@ $(".logo").animate({
                                     </div>`);  
 
                                     localStorage.setItem("carritoA",JSON.stringify(carritoA)); 
-                                   
+                                });
                                     }
                                      
                               )
@@ -95,7 +97,14 @@ $(".logo").animate({
                                <h3 style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
                     </div>`)    }
                
-                $("#vaciarCarrito").on("click", function(){                            
+                $("#vaciarCarrito").on("click", function(){    
+                    $("#jqueryCarrito").slideUp("slow",function(){    
+                    
+                    $(`#jqueryCarrito`).remove();  
+                    total=0;                           
+                    $(`#totalImporteChango`).html(` <h3 style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
+                    </div>`);   
+                                      
                     window.localStorage.removeItem("carritoA");});  
-           
                 });
+             

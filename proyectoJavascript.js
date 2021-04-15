@@ -1,10 +1,23 @@
+//Declaramos la url del archivo JSON local
+const URLJSON = "productos.json"
+
+
 
 $(".logo").animate({
     width: '150px',
     opacity: '1'},"slow", );
 
-
-let preguntarComprar="";
+$.getJSON(URLJSON, function (respuesta, estado) {
+    if(estado === "success"){
+      let misDatos = respuesta;
+      for (const dato of misDatos) {
+        $(".cargaProductos").append(` <div  class="card ">
+                                <img  class="imgcard" src="${dato.img}" alt="">
+                                <strong><p >${dato.descripcion} </p>
+                                <p>$ ${dato.precio}</p></strong>
+                                <button id="${dato.id}" style="height: auto; margin-bottom: 10px;" class="btn btn-success">Agregar</button>
+                                </div>`)  }
+                                let preguntarComprar="";
 let nombre="";
 let totalImporte=0;
 let totalDescripciones="";
@@ -161,6 +174,12 @@ function productoAgregado(id){
 }
 
 
+    }});
+
     
 
+
+
+
+    
 
