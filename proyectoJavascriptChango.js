@@ -1,7 +1,3 @@
-
-
-
-
 let carritoA=JSON.parse(localStorage.getItem("carritoA"));
 console.log("que nos trae da la pagina anterior" , carritoA)
 total=0;

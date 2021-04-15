@@ -17,7 +17,7 @@ $.getJSON(URLJSON, function (respuesta, estado) {
                                 <p>$ ${dato.precio}</p></strong>
                                 <button id="${dato.id}" style="height: auto; margin-bottom: 10px;" class="btn btn-success">Agregar</button>
                                 </div>`)  }
-                                let preguntarComprar="";
+let preguntarComprar="";
 let nombre="";
 let totalImporte=0;
 let totalDescripciones="";
