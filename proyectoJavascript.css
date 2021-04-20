@@ -20,7 +20,8 @@
     justify-content:center;
     align-items: center;
     margin-top: 100px;
-  background-color:black
+    background-color:yellow;
+  justify-content: space-between;
     
    }
 .pFooter{
@@ -37,7 +38,7 @@
 .nav__ul li a{
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace  ;
-    color: black;
+    color: white;
     padding: 50px 50px 50px 50px;
 }
 .card{
@@ -45,9 +46,11 @@
     margin-top: 20px;
     height:380px;
     width:250px;
-    border: solid 1px;
+    border: solid 1px white;
     justify-content: center;
     align-items: center;
+    background-color: rgb(15, 15, 15);
+    color: white;
     
 }
 .imgcard{
@@ -61,7 +64,7 @@ p{
 
 
 .thTitulo{
-color: green;
+color:white;
 font-size: 150%;
 
 }
@@ -72,12 +75,19 @@ td{
     
 }
 
+.bodyCarrito{
+    background-image: url('carrito.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+   
+}
 
-
-
-/*
+.body{
+    background-color: rgb(15, 15, 15);
+}
 
 .card:hover{
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     transition-duration: 1s;
-}/*
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-	<html lang="en">
+	<html lang="es">
 <head>
     <!--meta-->
 	<meta charset="utf-8">
@@ -7,128 +7,99 @@
 	<meta name="keywords" content="joyas, pulsera, aros, cadenitas, fiesta">
 	<meta name="description" content="Somos una empresa dedicada a la accesorios de belleza">
     <!--link-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<link rel="stylesheet" href="proyectoJavascript.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+	
    	<!--script-->
+	   <script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" > </script> <!--scriot de alerts personalizados-->
     <title>El Club de las Gorras</title>
 </head>
+<!--Se introduce un div para que traiga los productos desde un arhivo JSON-->
+<body class="body">
+		<div class="container" >
+			<div class="row" id="	cargaProductos"></div>
 
-<body>
-<div class="container" >
-	<div class="row" id="cargaProductos"></div>
-
-</div>
-	<nav>
-		<div class="nav1" style="height:auto; ">	
-			<img class="logo" src="img/logo.png" alt="" height="150" style="margin: 20px 0px 0px 50px;">
-			<ul class="nav__ul">	
-				<li > <a href="index.html">Home</a></li>
-				<li><a href="">Productos</a></li>
-				<li><a href="">Nosotros</a></li>
-				<li><a href="">Contacto</a></li>
-				<li id="carrito"><a href="proyectoJavascriptChango.html">Carrito de compras</a></li>
-			</ul>
 		</div>
-	</nav>
-
-	<div class="container" >
-		<div  class="cargaProductos row" id="cargaProductos">
-			
-		</div>
-	</div>
-
-
-
-<!--	Newsletter	-->
-<div id="news" style="margin-top: 5%;">
-	<form  id="formulario">
-		<div class="container">
-			<div class="row" >
-				<div class="col-xs-12	col-sm-12	col-md-6	col-lg-4"  >
-					<h2 style="color: black;padding-top: 50px ; font-style: italic; font-size:90px;">Contacto</h2>
-				</div>
-				
-				<div class="form-group row col-xs-12	col-sm-12	col-md-12	col-lg-8"  >
-					<div class="form-group col-xs-12	col-sm-12	col-md-6	col-lg-6" >
-						<label for="nombre" style="font-size: large;margin-top: 5%;">Nombre</label>		
-						<input type="text"  id="nombre" class="form-control" style="height: 60%;" name="nombre" placeholder="Ingrese su Nombre" id="nombre">
-					</div><br>
-												
-					<div class="form-group col-xs-12	col-sm-12	col-md-6	col-lg-6" >
-						<label for="apellido"  style="font-size: large;margin-top: 5%;" >Apellido</label>		
-						<input type="text" id="apellido" class="form-control" style="height: 60%;" name="apellido" placeholder="Ingrese su Apellido" id="apellido">
-					</div><br>	
-						
-					<div class="form-group col-xs-12	col-sm-12	col-md-12	col-lg-4 " style="margin-bottom: 3%; margin-top: 5%;	">
-						<label for="email"  style="font-size: large; margin-top: 2%;	">E-mail	</label>	
-						<input type="text" id="mail" class="form-control" style="height: 60%;" name="email" placeholder="Ingrese su E-mail" id="">
-					</div>
-				
-					<div class="form-group col-xs-12 col-sm-6 col-md-6	col-lg-2" style="margin-top: 9%;width: auto;"   >
-						<label for="estado" id="estadoCivil" style="font-size: large;">Estado Civil</label>		
-						<select name="estado" id="estadoCivil" style="font-size:medium	 ">
-							<option class="form-control" value="SOLTERO" style="font-size:small">Soltero/a</option>
-							<option class="form-control" value="CASADO" style="font-size:small ">Casado/a</option>
-						</select>
-					</div>	
-				
-					<div   class="form-check col-xs-12 col-sm-6 col-md-6 col-lg-3" style="margin-top: 9%; width: auto;" >
-						<input type="radio" id="sexo" name="sexo" id="Femenino" >
-						<label for="" style="font-size: medium;">Femenino</label>
-						<input type="radio" name="sexo" id="Masculino" >
-						<label for="" style="font-size: medium;">Masculino</label>
-					</div><br><br>
-									
-					<div class=".col-6 col-xs-12	col-sm-12	col-md-12	col-lg-12" style="margin-top: 5%;">
-						<div class="form-group " aria-setsize="100px" >
-							<label for="comentarios"  style="font-size: large;" >Comentarios</label>
-							<textarea style="height: 100px;" name="comentarios" class="form-control" style="height: 60%;"id="comentarios" placeholder="Ingrese sus comentarios"></textarea>
-						</div><br>
-					</div>
-							
-					<label class="form-check-label form-group col-xs-12	col-sm-12	col-md-5	col-lg-12"  style="font-size: large;" >
-						<input type="checkbox" class="form-check-input mr-2" name="newsletter" value="1">Deseas recibir el Newsletter?
-					</label><br><br>
-									
-					<div class="form-group col-xs-12	col-sm-12	col-md-5	col-lg-12	">
-						<input style="font-size:small" type="reset" class=" btn btn-dark" name="limpiar" value="Limpiar formulario">
-						<input  style="font-size:small	"type="submit" class="btn btn-dark" id="enviar" name="limpiar" value="Enviar">
-					</div>
-				</div>	
+		<!--NAV-->
+		<nav>
+			<div class="nav1" style="height:auto; ">	
+				<img class="logo" src="img/logo.png" alt=""  style="margin: 20px 0px 0px 50px;">
+				<ul class="nav__ul">	
+					<li > <a href="index.html">Home</a></li>
+					<li><a href="productos.html">Productos</a></li>
+					<li><a href="">Nosotros</a></li>
+					<li><a href="formulario.html">Contacto</a></li>
+					<li id="carrito"><a href="proyectoJavascriptChango.html">Carrito de compras</a></li>
+				</ul>
 			</div>
-		</div>		
-	</form>
-</div>
+		</nav>
+
+		<!--Se introduce Carousel con Imagenes-->
+		<div class="container"  >
+			<div  id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div  class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="Nueva carpeta/x0.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+					<h5>First slide label</h5>
+					<p>Some representative placeholder content for the first slide.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="Nueva carpeta/x1.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+					<h5>Second slide label</h5>
+					<p>Some representative placeholder content for the second slide.</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="Nueva carpeta/x2.jpg" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+					<h5>Third slide label</h5>
+					<p>Some representative placeholder content for the third slide.</p>
+					</div>
+				</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+	<!--carrousel-->
+
+	<!--FOOTER-->
+		<footer class="footer1"   >			
+
+			
+			<div class="container" style="border: solid 2px red;">
+				<h4>Contacto</h4>
+				<h6 class="pFooter" >Direccion</h6>
+					<h6 class="pFooter" >Telefono</h6>
+				<p class="pFooter">11-6860-2774</p>
+				
+				
+				<h6 class="pFooter" >Mail</h6>
+				<p class="pFooter">elclubdelasgorras@club.com.ar</p>
+			</div>
+		</footer>	
 
 
-<footer class="footer1"   >			
-	<div>
-		<h4> Quienes Somos?</h4>
-		<p class="pFooter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A libero vel labore ipsa quia reprehenderit magnam veritatis quis, fuga necessitatibus nihil eius. Consectetur facere eaque debitis delectus, distinctio odio in.</p>
-	</div>
-	
-	<div>
-		<h4> Contacto</h4>
-		<p class="pFooter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A libero vel labore ipsa quia reprehenderit magnam veritatis quis, fuga necessitatibus nihil eius. Consectetur facere eaque debitis delectus, distinctio odio in.</p>
-	</div>
-	<div>
-		<h4> Redes</h4>
-		<p class="pFooter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A libero vel labore ipsa quia reprehenderit magnam veritatis quis, fuga necessitatibus nihil eius. Consectetur facere eaque debitis delectus, distinctio odio in.</p>
-	</div>
-	
-</footer>	
-
-
-
-<script src="js/jquery-3.6.0.min.js"></script>
-
-<script src="proyectoJavascript.js"></script>
-
-
-
-
-
-</body>
-	</html>
+		<!--SCRIPTS-->
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script src="proyectoJavascript.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+	</body>
+</html>

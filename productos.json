@@ -1,149 +1,149 @@
 [   {  "id" : 1,
     "descripcion" : "Gorra Lisa Color Negro" ,
     "img": "img/Lisas/gorra1.png",
-    "precio": 2000
+    "precio": 14.99
     },
     
     {
     "id" : 2,
     "descripcion" : "Gorra Lisa Color Beige" ,
     "img": "img/Lisas/gorra2.png",
-    "precio": 1500
+    "precio": 10.99
     },
 
     {
     "id" : 3,
     "descripcion" : "Gorra Lisa Azul Marino" ,
     "img": "img/Lisas/gorra5.png   ",
-    "precio": 2000
+    "precio": 14.99
     },
     
     {
     "id" : 4,
     "descripcion" : "Gorra Lisa Azul Clasico" ,
     "img": "img/Lisas/gorra6.png   ",
-    "precio": 1500
+    "precio": 10.99
     },
 
     {
     "id" : 5,
     "descripcion" : "Gorra Lisa Blanca" ,
     "img": "img/Lisas/gorra4.png   ",
-    "precio": 2000
+    "precio": 14.99
     },
     {
     "id" : 6,
     "descripcion" : "Gorra Mickey Rosa" ,
     "img": "img/Disney/Disney1.png",
-    "precio": 2000
+    "precio": 18.99
     },
     {
     "id" : 7,
     "descripcion" : "Gorra Mickey Negra" ,
     "img": "img/Disney/Disney2.png   ",
-    "precio": 1500
+    "precio": 18.99
     },
     {
     "id" : 8,
     "descripcion" : "Gorra Minnie Negra" ,
     "img": "img/Disney/Disney3.png   ",
-    "precio": 2000
+    "precio": 16.99
     },
     {
     "id" : 9,
     "descripcion" : "Gorra Pato Donald" ,
     "img": "img/Disney/Disney4.png   ",
-    "precio": 2000
+    "precio": 18.99
     },
     {
     "id" : 10,
     "descripcion" : "Gorra Mickey Roja" ,
     "img": "img/Disney/Disney5.png  ",
-    "precio": 2000
+    "precio": 19.99
     },
 
     {
     "id" : 11,
     "descripcion" : "Gorra Pluto" ,
     "img": "img/Disney/Disney6.png   ",
-    "precio": 2000
+    "precio": 15.99
     },
 
     {
     "id" : 12,
     "descripcion" : "Gorra Super Campeones Azul" ,
     "img": "img/Supercampeones/gorrasp1.png ",
-    "precio": 2000
+    "precio": 10.99
     },
 
     {
     "id" : 13,
     "descripcion" : "Gorra Super Campeones Azul y Roja" ,
     "img": "img/Supercampeones/gorrasp2.png ",
-    "precio": 2000
+    "precio": 10.99
     },
 
     {
     "id" : 14,
     "descripcion" : "Gorra Super Campeones Azul y Blanca" ,
     "img": "img/Supercampeones/gorrasp3.png   ",
-    "precio": 2000
+    "precio": 11.99
     },
 
     {
     "id" : 15,
     "descripcion" : "Gorra Super Campeones Azul y Roja" ,
     "img": "img/Lisas/gorra4.png   ",
-    "precio": 2000
+    "precio": 10.99
     },
 
     {
     "id" : 16,
     "descripcion" : "Gorra Super Campeones Negra" ,
     "img": "img/Supercampeones/gorrasp5.png ",
-    "precio": 2000
+    "precio": 12.99
     },
 
     {
     "id" : 17,
     "descripcion" : "Gorra Super Campeones Pelota Negra" ,
     "img": "img/Supercampeones/gorrasp6.png ",
-    "precio": 2000
+    "precio": 14.99
     },
 
     {
     "id" : 18,
     "descripcion" : "Gorra Super Campeones Dorada" ,
     "img": "img/Supercampeones/gorrasp7.png  ",
-    "precio": 2000
+    "precio": 14.99
     },
 
     {
     "id" : 19,
     "descripcion" : "Gorra Independiente" ,
     "img": "img/Clubes/gorrasclub1.png ",
-    "precio": 2000
+    "precio": 9.99
     },
 
     {
     "id" : 20,
     "descripcion" : "Gorra Boca Juniors" ,
     "img": "img/Clubes/gorrasclub2.png   ",
-    "precio": 1500
+    "precio": 4.99
     },
 
     {
     "id" : 21,
     "descripcion" : "Gorra River Plate" ,
     "img": "img/Clubes/gorrasclub3.png  ",
-    "precio": 3000
+    "precio": 20.99
     },
 
     {
     "id" : 22,
     "descripcion" : "Gorra Racing Club" ,
     "img": "img/Clubes/gorrasclub4.png  ",
-    "precio": 2000
+    "precio": 10.99
     }
 
 

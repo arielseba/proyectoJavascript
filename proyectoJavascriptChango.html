@@ -6,53 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 	<link rel="stylesheet" href="proyectoJavascript.css">
-	
+	<script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" > </script> <!--scriot de alerts personalizados-->
 
 	
     <title>Club de las gorras</title>
 </head>
-<body>
+<body class="body">
 	
     <nav>
 		<div class="nav1" style="height:auto; ">	
-			<img class="logo" src="img/logo.png" alt="" height="150" style="margin: 20px 0px 0px 50px;">
+			<img class="logo" src="img/logo.png" alt="" 	 style="margin: 20px 0px 0px 50px;">
 			<ul class="nav__ul">	
 				<li> <a href="index.html">Home</a></li>
-				<li><a href="">Productos</a></li>
+				<li><a href="productos.html">Productos</a></li>
 				<li><a href="">Nosotros</a></li>
-				<li><a href="">Contacto</a></li>
+				<li><a  href="formulario.html">Contacto</a></li>
 				<li id="carrito"><a href="proyectoJavascriptChango.html">Carrito de compras</a></li>
 			</ul>
 		</div>
 	</nav>
 
-	<table style="width: 80%;margin-top: 5% ; margin-left: 5%;">
+	<table  id= "tabla"style="width: 80%;margin-top: 5% ; margin-left: 5%; bac">
 
-		<tr> 
-			<td class="thTitulo" >Id</td>
-			<td class="thTitulo" style="margin-left: 20px;width: 35%; ">Producto</td>
-			<td class="thTitulo" style="margin-left: 60px; width: 20%; ">Importe</td>
-			<td class="thTitulo" style="width: 20%;">Cantidad</td>
-			<td class="thTitulo">Importe Total</td>
-			<td class="thTitulo">Eliminar</td>
-			
-		</tr>
-		<table id="jqueryCarrito" style="display:none; width:80%; margin-top: 5% ; margin-left:5%;" >
+	
+		
 
 		</table>
 			
 	
-	</table>
+	
 
-<div id="totalImporteChango" style=" width: 80%;margin-top: 5% ; margin-left: 5%;"></div>
-<div id="totalImporteChango2" style=" width: 80%;margin-top: 5% ; margin-left: 5%;"></div>
+<div id="totalImporteChango" style="margin-top: 5% ; "></div>
+<div id="carroVacio" style=" width: 80%;margin-top: 5% ; margin-left: 5%;"></div>
 
-	<hr>
+<div id="formularioCompra"></div>
     
-
+	<footer class="footer1"  style="margin-top: 30%;">			
+		<div>
+			<h4> Quienes Somos?</h4>
+			<p class="pFooter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A libero vel labore ipsa quia reprehenderit magnam veritatis quis, fuga necessitatibus nihil eius. Consectetur facere eaque debitis delectus, distinctio odio in.</p>
+		</div>
+		
+		<div>
+			<h4> Contacto</h4>
+			<p class="pFooter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A libero vel labore ipsa quia reprehenderit magnam veritatis quis, fuga necessitatibus nihil eius. Consectetur facere eaque debitis delectus, distinctio odio in.</p>
+		</div>
+		<div>
+			<h4> Redes</h4>
+			<p class="pFooter">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A libero vel labore ipsa quia reprehenderit magnam veritatis quis, fuga necessitatibus nihil eius. Consectetur facere eaque debitis delectus, distinctio odio in.</p>
+		</div>
+		
+	</footer>	
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="proyectoJavascriptChango.js"></script>
-
+<script src="proyectoJavascript.js"></script>
 		
 
 </body>

@@ -1,0 +1,13 @@
+-Separador de miles.
+-Pagina Responsive.
+-Slider principal.
+-Slider por cada producto
+-Agregar temperatura de buenos aires a traves de api.
+-Comentar codigo.
+-Agregar lo de la ultima clase
+-Poner datos reales
+-Completar todas las secciones y linkearlas correctamente.
+-Agregar redes sociales.
+-Darle mucho diseño.
+
+
