@@ -1,3 +1,6 @@
+
+
+
 //FUNCION QUE MUESTRA UN ALERT PERSONALIZADO AL AGREGAR UN PRODUCTO AL CARRO
 function mostrar(){
     swal("Muchas gracias","El producto fue agregado exitosamente","success") ;
@@ -14,7 +17,7 @@ $.getJSON(URLJSON, function (respuesta, estado) {
     if(estado === "success"){
       let misDatos = respuesta;
       for (const dato of misDatos) {
-        $(".cargaProductos").append(` <div  class="card ">
+        $(".cargaProductos").append(` <div  class="card">
                                 <img  class="imgcard" src="${dato.img}" alt="">
                                 <strong><p >${dato.descripcion} </p>
                                 <p>$ ${dato.precio}</p></strong>
@@ -29,6 +32,14 @@ let cantidad=0;
 let productosSeleccionados=[];
 let carritoA=[];
 let verificador=0;  
+/*if (localStorage.carritoA==undefined ){
+    $(`#carrito`).append(`<a href="proyectoJavascriptChango.html"><img src="carrito1.png" alt="50" width="25"> </a> `);}
+
+
+  if (localStorage.carritoA!=undefined) {
+$(`#carrito`).append(`<a href="proyectoJavascriptChango.html">${carritoA.length}<img src="carrito1.png" alt="50" width="25"> </a> `);}*/
+
+
 
 
 class gorrasLisas {
@@ -158,6 +169,7 @@ function productoAgregado(id){
     }
  }
 });
+
 
     
 

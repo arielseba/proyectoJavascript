@@ -1,5 +1,6 @@
 let carritoA=JSON.parse(localStorage.getItem("carritoA"));
 
+
 total=0;
 
 //OBTENGO LA COTIZACION DEL DOLAR A TRAVES DE UNA API
@@ -13,11 +14,96 @@ api.onreadystatechange=function(){
   let datos=JSON.parse(this.responseText);
 
  dolar=parseInt(datos.compra);
- console.log("valor dolar adentro",dolar)
-  
+
 
   }
 }
+function vaciarCarrito(){
+  $("#vaciarCarrito").on("click", function(){    
+
+   
+    $("#tabla").slideUp("slow",function(){    
+    $(`#tabla`).remove();  
+    $(`#totalImporteChango`).remove();
+    $("#carroVacio").append(`<div>
+    <h3 style="color:white ;text-align: center;">Por el momento usted no ha seleccionado ningun producto de nuestra tienda </h3>                                
+    </div>`)    
+    $(`#totalImporteChango`).html(` <h3 style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
+    </div>`);   
+    window.localStorage.removeItem("carritoA"); 
+                                      
+   });  
+
+});}
+
+function finalizarCompra(){
+  $("#finalizarCompra").on("click", function(){    
+    
+              
+    swal("Importe a abonar","En ARS: \t\t\t\t\t\t$" + (total*dolar).toFixed(2) + "\n" + "En USD: $" + total,"success" ) ;
+
+   //   swal("Muchas gracias por su compra","A continuacion le pediremos algunos datos para concluir la compra.","success") ;
+
+ 
+      
+      $("#tabla").fadeOut("5000",function(){    
+      
+          })
+          $("#totalImporteChango").fadeOut("5000",function(){    
+      
+          })
+          
+      $("#formularioCompra").append(`
+      <form class="row g-3" style="margin: 5% 0% 0% 30% ;width:30%;  background-color: rgb(15, 15, 15); border: solid 1px white;color:white; ">
+      <div class="col-md-6">
+        <label for="inputNombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre">
+      </div>
+      <div class="col-md-6">
+        <label for="inputApellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="inputApellido" placeholder="Ingrese su apellido">
+      </div>
+      <div class="col-12">
+        <label for="inputDireccion" class="form-label">Direccion</label>
+        <input type="text" class="form-control" id="inputDireccion" placeholder="Ingrese su direccion" >
+      </div>
+      <div class="col-12">
+        <label for="inputTelefono" class="form-label">Telefono</label>
+        <input type="text" class="form-control" id="inputTelefono" placeholder="Ingrese su telefono" >
+      </div>
+      <div class="col-md-6">
+        <label for="inputCiudad" class="form-label">Ciudad</label>
+        <input type="text" class="form-control" id="inputCiudad" placeholder="Ingrese su ciudad">
+      </div>
+      <div class="col-md-4">
+        <label for="inputProvincia" class="form-label">Provincia</label>
+        <select id="inputProvincia" class="form-select">
+          <option selected>Elegir...</option>
+          <option>Buenos Aires</option>
+          <option>Cordoba</option>
+          <option>Mendoza</option>
+          <option>Neuquen</option>
+          <option>Rio Negro</option>
+          <option>Santa Cruz</option>
+          <option>Misiones</option>
+          <option>Entre Rios</option>
+          <option>Misiones</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="inputCodigo" class="form-label">Cod. Postal</label>
+        <input type="text" class="form-control" id="inputCodigo" placeholder="C.P.">
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary" style="margin:  10% 0px 10% 40%; background-color:yellow; color:black;">Enviar</button>
+      </div>
+    </form>`)    
+                                                             
+      });  
+  
+
+    };
 $(document).ready(function(){
 
     
@@ -33,11 +119,12 @@ $(".logo").animate({
 
 if(carritoA==undefined){
 $("#carroVacio").append(`<div>
-<h3 style="color:white ;text-align: center;">Por el momento usted no ha seleccionado ningun producto de nuestra tienda </h3>                                
+<h3 style="margin-right:auto;margin-left:auto;color:white ;text-align: center;">Por el momento usted no ha seleccionado ningun producto de nuestra tienda </h3>                                
 </div>`)}
+                  
 
 if(carritoA!=undefined){
-    $("#tabla").append(`<tr style="color:yellow; font-size:150%; "> <td>${"id"}</td>
+    $("#tabla").append(`<tr  style="color:yellow; font-size:150%; "> <td>${"id"}</td>
                              <td>${"Producto"}</td>
                              <td>${"Importe"}</td>
                              <td></td>
@@ -68,34 +155,33 @@ if(carritoA!=undefined){
                 
                                //funcion de agregar unidades de productos del carrito
                                 $(`#botonAgregar${elem.id}`).on('click', function(){
-                                    console.log(`Agregaste una unidad el producto:  ${elem.descripcion}`);
-                                    elem.cantidadG=elem.cantidadG+1;
-                                    console.log(elem);
+                                   elem.cantidadG=elem.cantidadG+1;
                                    $(`#CantidadG${elem.id}`).html(elem.cantidadG);
-                                   $(`#CantidadT${elem.id}`).html("$ "+ elem.cantidadG*elem.precio);
+                                   $(`#CantidadT${elem.id}`).html("$ "+ (elem.cantidadG*elem.precio).toFixed(2));
                                    total=total+elem.precio;
                                    $(`#totalImporteChango`).html(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
-                                   <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+                                   <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
                                     </div>`) 
                                    localStorage.setItem("carritoA",JSON.stringify(carritoA));
-                                    
+                                   
+                                  vaciarCarrito();
+                                  finalizarCompra(); 
 
                                 })
                         
                                  //funcion de quitar unidades de productos del carrito
                                 $(`#botonQuitar${elem.id}`).on('click', function(){
                                     if(elem.cantidadG>1){
-                                    console.log(`Quitaste una unidad el producto:  ${elem.descripcion}`);
                                     elem.cantidadG=elem.cantidadG-1;
-                                    console.log(elem);
                                     $(`#CantidadG${elem.id}`).html(elem.cantidadG);
-                                    $(`#CantidadT${elem.id}`).html("$ "+ elem.cantidadG*elem.precio);
+                                    $(`#CantidadT${elem.id}`).html("$ "+ (elem.cantidadG*elem.precio).toFixed(2));
                                     total=total-elem.precio;
                                     $(`#totalImporteChango`).html(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
-                                    <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+                                    <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
                                      </div>`) 
                                     localStorage.setItem("carritoA",JSON.stringify(carritoA)); 
-                                   
+                                    vaciarCarrito();
+                                    finalizarCompra(); 
                                     }
                                 })
                                 //funcion de eliminar productos del carrito
@@ -108,7 +194,7 @@ if(carritoA!=undefined){
                                     carritoA.splice(busquedaId,1);   
                                     total=total-(elem.precio*elem.cantidadG);                                
                                     $(`#totalImporteChango`).html(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
-                                    <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+                                    <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 class="importeCompra" style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
                                      </div>`) 
                                     if(total===0){
                                         $(`#totalImporteChango`).remove();
@@ -116,112 +202,26 @@ if(carritoA!=undefined){
                                         <h3 style="color:white ;text-align: center;">Por el momento usted no ha seleccionado ningun producto de nuestra tienda </h3>                                
                                         </div>`)}
                                     localStorage.setItem("carritoA",JSON.stringify(carritoA)); 
-                                   console.log(carritoA);
+                    
+                                    vaciarCarrito();
+                                    finalizarCompra(); 
+                              
                                 });
                                 
                                     }
                                      
                               )
-                    
-                           
-                                
 
- 
+                          
                 }
-            
-                $("#totalImporteChango").append(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
-                               <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
-                                </div>`)  
-               }
-           
-         
-         
-                
-                
-               
-                
-                $("#vaciarCarrito").on("click", function(){    
-                   
-                    $("#tabla").slideUp("slow",function(){    
-                    
-                    $(`#tabla`).remove();  
-                    $(`#totalImporteChango`).remove();
-                    $(`#tabla   `).remove();
-                    $("#carroVacio").append(`<div>
-                    <h3 style="color:white ;text-align: center;">Por el momento usted no ha seleccionado ningun producto de nuestra tienda </h3>                                
-                    </div>`)    
-                    total=0;                           
-                    $(`#totalImporteChango`).html(` <h3 style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
-                    </div>`);   
-                                      
-                    window.localStorage.removeItem("carritoA");});  
-                
-                });
+                $("#totalImporteChango").append(`<div id="a"  >
+<button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 id="importe" style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+ </div>`)  
+
+              }
+        
+             
     
-                $("#finalizarCompra").on("click", function(){    
-                  
-                            
-                  swal("Importe a abonar","En ARS: \t\t\t\t\t\t$" + (total*dolar).toFixed(2) + "\n" + "En USD: $" + total,"success" ) ;
-
-                    swal("Muchas gracias por su compra","A continuacion le pediremos algunos datos para concluir la compra.","success") ;
-
-               
-                    
-                    $("#tabla").fadeOut("5000",function(){    
-                    
-                        })
-                        $("#totalImporteChango").fadeOut("5000",function(){    
-                    
-                        })
-                        
-                    $("#formularioCompra").append(`
-                    <form class="row g-3" style="margin: 5% 0% 0% 30% ;width:30%;  background-color: rgb(15, 15, 15); border: solid 1px white;color:white; ">
-                    <div class="col-md-6">
-                      <label for="inputNombre" class="form-label">Nombre</label>
-                      <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre">
-                    </div>
-                    <div class="col-md-6">
-                      <label for="inputApellido" class="form-label">Apellido</label>
-                      <input type="text" class="form-control" id="inputApellido" placeholder="Ingrese su apellido">
-                    </div>
-                    <div class="col-12">
-                      <label for="inputDireccion" class="form-label">Direccion</label>
-                      <input type="text" class="form-control" id="inputDireccion" placeholder="Ingrese su direccion" >
-                    </div>
-                    <div class="col-12">
-                      <label for="inputTelefono" class="form-label">Telefono</label>
-                      <input type="text" class="form-control" id="inputTelefono" placeholder="Ingrese su telefono" >
-                    </div>
-                    <div class="col-md-6">
-                      <label for="inputCiudad" class="form-label">Ciudad</label>
-                      <input type="text" class="form-control" id="inputCiudad" placeholder="Ingrese su ciudad">
-                    </div>
-                    <div class="col-md-4">
-                      <label for="inputProvincia" class="form-label">Provincia</label>
-                      <select id="inputProvincia" class="form-select">
-                        <option selected>Elegir...</option>
-                        <option>Buenos Aires</option>
-                        <option>Cordoba</option>
-                        <option>Mendoza</option>
-                        <option>Neuquen</option>
-                        <option>Rio Negro</option>
-                        <option>Santa Cruz</option>
-                        <option>Misiones</option>
-                        <option>Entre Rios</option>
-                        <option>Misiones</option>
-                      </select>
-                    </div>
-                    <div class="col-md-2">
-                      <label for="inputCodigo" class="form-label">Cod. Postal</label>
-                      <input type="text" class="form-control" id="inputCodigo" placeholder="C.P.">
-                    </div>
-            
-                    <div class="col-12">
-                      <button type="submit" class="btn btn-primary" style="margin:  10% 0px 10% 40%; background-color:yellow; color:black;">Enviar</button>
-                    </div>
-                  </form>`)    
-                                                                           
-                    });  
-                
-
-                  });
+            vaciarCarrito();
+            finalizarCompra();  
+    });
