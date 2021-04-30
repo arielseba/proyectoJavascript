@@ -39,66 +39,95 @@ function vaciarCarrito(){
 function finalizarCompra(){
   $("#finalizarCompra").on("click", function(){    
     
-              
-    swal("Importe a abonar","En ARS: \t\t\t\t\t\t$" + (total*dolar).toFixed(2) + "\n" + "En USD: $" + total,"success" ) ;
+    /*  swal({
+      title: "Importe a abonar",
+      text: "En ARS: \t\t\t\t\t\t$" + (total*dolar).toFixed(2) + "\n" + "En USD: $" + total,
+      icon: "success",
+      buttons: ["Volver", "Comprar"],   });   
+    */
 
-   //   swal("Muchas gracias por su compra","A continuacion le pediremos algunos datos para concluir la compra.","success") ;
+
+
+
+    swal({
+      title: "Importe a abonar",
+      text: "En ARS: \t\t\t\t\t\t$" + (total*dolar).toFixed(2) + "\n" + "En USD: $" + total,
+      icon: "success",
+      buttons: true,
+      : true,
+      
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Muchas gracias por su compra","A continuacion le pediremos algunos datos para concluir la compra.","success", {
+          
+          
+        });
+        $("#tabla").fadeOut("500",function(){    
+      
+        })
+        $("#totalImporteChango").fadeOut("5000",function(){    
+    
+        })
+        
+    $("#formularioCompra").append(`  <form  class="form row g-3" style="margin-bottom:9%;" >
+    <div class="col-md-6 " >
+      <label for="inputNombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre">
+    </div>
+    <div class="col-md-6">
+      <label for="inputApellido" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="inputApellido" placeholder="Ingrese su apellido">
+    </div>
+    <div class="col-12">
+      <label for="inputDireccion" class="form-label">Direccion</label>
+      <input type="text" class="form-control" id="inputDireccion" placeholder="Ingrese su direccion" >
+    </div>
+    <div class="col-12">
+      <label for="inputTelefono" class="form-label">Telefono</label>
+      <input type="text" class="form-control" id="inputTelefono" placeholder="Ingrese su telefono" >
+    </div>
+    <div class="col-md-6">
+      <label for="inputCiudad" class="form-label">Ciudad</label>
+      <input type="text" class="form-control" id="inputCiudad" placeholder="Ingrese su ciudad">
+    </div>
+    <div class="col-md-4">
+      <label for="inputProvincia" class="form-label">Provincia</label>
+      <select id="inputProvincia" class="form-select">
+        <option selected>Elegir...</option>
+        <option>Buenos Aires</option>
+        <option>Cordoba</option>
+        <option>Mendoza</option>
+        <option>Neuquen</option>
+        <option>Rio Negro</option>
+        <option>Santa Cruz</option>
+        <option>Misiones</option>
+        <option>Entre Rios</option>
+        <option>Misiones</option>
+      </select>
+    </div>
+   
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" style="margin:  10% 0px 10% 40%; background-color:yellow; color:black;">Enviar</button>
+    </div>
+  </form>`)    } 
+    });
+
+
+
+
+
+
+
+
+    
+   
+      
 
  
       
-      $("#tabla").fadeOut("5000",function(){    
-      
-          })
-          $("#totalImporteChango").fadeOut("5000",function(){    
-      
-          })
-          
-      $("#formularioCompra").append(`
-      <form class="row g-3" style="margin: 5% 0% 0% 30% ;width:30%;  background-color: rgb(15, 15, 15); border: solid 1px white;color:white; ">
-      <div class="col-md-6">
-        <label for="inputNombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="inputNombre" placeholder="Ingrese su nombre">
-      </div>
-      <div class="col-md-6">
-        <label for="inputApellido" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="inputApellido" placeholder="Ingrese su apellido">
-      </div>
-      <div class="col-12">
-        <label for="inputDireccion" class="form-label">Direccion</label>
-        <input type="text" class="form-control" id="inputDireccion" placeholder="Ingrese su direccion" >
-      </div>
-      <div class="col-12">
-        <label for="inputTelefono" class="form-label">Telefono</label>
-        <input type="text" class="form-control" id="inputTelefono" placeholder="Ingrese su telefono" >
-      </div>
-      <div class="col-md-6">
-        <label for="inputCiudad" class="form-label">Ciudad</label>
-        <input type="text" class="form-control" id="inputCiudad" placeholder="Ingrese su ciudad">
-      </div>
-      <div class="col-md-4">
-        <label for="inputProvincia" class="form-label">Provincia</label>
-        <select id="inputProvincia" class="form-select">
-          <option selected>Elegir...</option>
-          <option>Buenos Aires</option>
-          <option>Cordoba</option>
-          <option>Mendoza</option>
-          <option>Neuquen</option>
-          <option>Rio Negro</option>
-          <option>Santa Cruz</option>
-          <option>Misiones</option>
-          <option>Entre Rios</option>
-          <option>Misiones</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <label for="inputCodigo" class="form-label">Cod. Postal</label>
-        <input type="text" class="form-control" id="inputCodigo" placeholder="C.P.">
-      </div>
-
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary" style="margin:  10% 0px 10% 40%; background-color:yellow; color:black;">Enviar</button>
-      </div>
-    </form>`)    
+     
                                                              
       });  
   
@@ -120,7 +149,10 @@ $(".logo").animate({
 if(carritoA==undefined){
 $("#carroVacio").append(`<div>
 <h3 style="margin-right:auto;margin-left:auto;color:white ;text-align: center;">Por el momento usted no ha seleccionado ningun producto de nuestra tienda </h3>                                
-</div>`)}
+</div>`)
+
+
+}
                   
 
 if(carritoA!=undefined){
@@ -214,9 +246,9 @@ if(carritoA!=undefined){
 
                           
                 }
-                $("#totalImporteChango").append(`<div id="a"  >
-<button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 id="importe" style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
- </div>`)  
+                $(`#totalImporteChango`).html(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
+                <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+                 </div>`) 
 
               }
         
