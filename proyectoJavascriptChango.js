@@ -54,7 +54,7 @@ function finalizarCompra(){
       text: "En ARS: \t\t\t\t\t\t$" + (total*dolar).toFixed(2) + "\n" + "En USD: $" + total,
       icon: "success",
       buttons: true,
-      : true,
+      success: true,
       
     })
     .then((willDelete) => {

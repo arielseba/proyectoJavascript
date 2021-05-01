@@ -63,30 +63,28 @@ let gorraNegra=new gorrasLisas ( 1, "Gorra Lisa Negra" ,  14.99,  0);
 let gorraBeige=new gorrasLisas ( 2, "Gorra Lisa Beige" ,  15.99,  0); 
 let gorraAzulM=new gorrasLisas ( 3,"Gorra Lisa Azul Marino" ,  14.99,0); 
 let gorraAzulC=new gorrasLisas ( 4,"Gorra Lisa Azul Clasico" ,  10.99,0); 
-let gorraBlanca=new gorrasLisas ( 5,"Gorra Lisa Blanca Clasica" ,  14.99,0); 
 //Declaracion de las gorras de Disney
-let gorraMickeyRosa=new gorrasLisas ( 6, "Gorra Mickey Rosa" ,  18.99,  0); 
-let gorraMickeyNegra=new gorrasLisas (7, "Gorra Mickey Negra" ,  18.99, 0);
-let gorraMinnieNegra=new gorrasLisas ( 8,"Gorra Minnie Negra" ,  16.99,  0);
-let gorraDonald=new gorrasLisas   (9, "Gorra Pato Donald Combinada" ,  18.99,0);
-let gorraMickeyRoja=new gorrasLisas (10, "Gorra Mickey Roja" ,  19.99,  0); 
-let gorraPluto=new gorrasLisas (11, "Gorra Pluto Clasica" ,  15.99,  0); 
+let gorraMickeyRosa=new gorrasLisas ( 5, "Gorra Mickey Rosa" ,  18.99,  0); 
+let gorraMickeyNegra=new gorrasLisas (6, "Gorra Mickey Negra" ,  18.99, 0);
+let gorraMinnieNegra=new gorrasLisas ( 7,"Gorra Minnie Negra" ,  16.99,  0);
+let gorraDonald=new gorrasLisas   (8, "Gorra Pato Donald Combinada" ,  18.99,0);
+let gorraMickeyRoja=new gorrasLisas (9, "Gorra Mickey Roja" ,  19.99,  0); 
+let gorraPluto=new gorrasLisas (10, "Gorra Pluto Clasica" ,  15.99,  0); 
 //Declaracion de las gorras de los supercampeones
-let gorraAzul=new gorrasLisas ( 12,"Gorra Super Campeones Azul" ,  10.99,  0); 
-let gorraAzulR=new gorrasLisas ( 13,"Gorra Super Campeones Azul c/Rojo" ,  10.99, 0); 
-let gorraAzulB=new gorrasLisas ( 14,"Gorra Super Campeones Azul c/Blanco" ,  11.99, 0); 
-let gorraAzulRo=new gorrasLisas ( 15,"Gorra Super Campeones Azul c/Rojo" ,  10.99,  0); 
-let gorraNegraC=new gorrasLisas ( 16,"Gorra Super Campeones Negra" ,  12.99,  0); 
-let gorraNegraE=new gorrasLisas ( 17,"Gorra Super Campeones Negra Estampada" ,  14.99,  0); 
-let gorraNegraD=new gorrasLisas ( 18,"Gorra Super Campeones Negra c/Dorada" ,  14.99,  0); 
+let gorraAzul=new gorrasLisas ( 11,"Gorra Super Campeones Azul" ,  10.99,  0); 
+let gorraAzulR=new gorrasLisas ( 12,"Gorra Super Campeones Azul c/Rojo" ,  10.99, 0); 
+let gorraAzulB=new gorrasLisas ( 13,"Gorra Super Campeones Azul c/Blanco" ,  11.99, 0); 
+let gorraNegraC=new gorrasLisas ( 14,"Gorra Super Campeones Negra" ,  12.99,  0); 
+let gorraNegraE=new gorrasLisas ( 15,"Gorra Super Campeones Negra Estampada" ,  14.99,  0); 
+let gorraNegraD=new gorrasLisas ( 16,"Gorra Super Campeones Negra c/Dorada" ,  14.99,  0); 
 //Declaracion de las gorras de Futbol
-let gorraIndependiente=new gorrasLisas (19, "Gorra Independiente " ,  9.99,  0); 
-let gorraBoca=new  gorrasLisas( 20,"Gorra Boca " ,  4.99,  0); 
-let gorraRiver=new gorrasLisas ( 21,"Gorra River " ,  20.99, 0); 
-let gorraRacing=new gorrasLisas ( 22,"Gorra Racing " ,  10.99,0);
+let gorraIndependiente=new gorrasLisas (17, "Gorra Independiente " ,  9.99,  0); 
+let gorraBoca=new  gorrasLisas( 18,"Gorra Boca " ,  4.99,  0); 
+let gorraRiver=new gorrasLisas ( 19,"Gorra River " ,  20.99, 0); 
+let gorraRacing=new gorrasLisas ( 20,"Gorra Racing " ,  10.99,0);
 //DECLARACION DE ARRAY CON TODOS LOS PRODUCTOS
-let totalProductos=[gorraNegra,gorraBeige,gorraAzulM,gorraAzulC,gorraBlanca,gorraMickeyRosa,gorraMickeyNegra,gorraMinnieNegra,gorraDonald,gorraMickeyRoja,gorraPluto,
- gorraAzul,gorraAzulR,gorraAzulB,gorraAzulRo,gorraNegraC,gorraNegraE,gorraNegraD,gorraIndependiente,gorraBoca,gorraRiver,gorraRacing];
+let totalProductos=[gorraNegra,gorraBeige,gorraAzulM,gorraAzulC,gorraMickeyRosa,gorraMickeyNegra,gorraMinnieNegra,gorraDonald,gorraMickeyRoja,gorraPluto,
+ gorraAzul,gorraAzulR,gorraAzulB,gorraNegraC,gorraNegraE,gorraNegraD,gorraIndependiente,gorraBoca,gorraRiver,gorraRacing];
  
 
 //SE AGREGAN EVENTOS AL HACER CLICK 
@@ -130,10 +128,7 @@ agregar=document.getElementById("19");
 agregar.addEventListener("click",()=>{productoAgregado(19)});
 agregar=document.getElementById("20");
 agregar.addEventListener("click",()=>{productoAgregado(20)});
-agregar=document.getElementById("21");
-agregar.addEventListener("click",()=>{productoAgregado(21)});
-agregar=document.getElementById("22");
-agregar.addEventListener("click",()=>{productoAgregado(22)});
+
 
 //FUNCION QUE AGREGA PRODUCTOS AL CARRITO DE COMPRAS
 function productoAgregado(id){
