@@ -1,10 +1,11 @@
-
-
-
 //FUNCION QUE MUESTRA UN ALERT PERSONALIZADO AL AGREGAR UN PRODUCTO AL CARRO
 function mostrar(){
     swal("Muchas gracias","El producto fue agregado exitosamente","success") ;
 }
+
+
+            
+
 //ANIMACION DEL LOGO DE LA EMPRESA
 $(".logo").animate({
     width: '150px',
@@ -32,15 +33,6 @@ let cantidad=0;
 let productosSeleccionados=[];
 let carritoA=[];
 let verificador=0;  
-/*if (localStorage.carritoA==undefined ){
-    $(`#carrito`).append(`<a href="proyectoJavascriptChango.html"><img src="carrito1.png" alt="50" width="25"> </a> `);}
-
-
-  if (localStorage.carritoA!=undefined) {
-$(`#carrito`).append(`<a href="proyectoJavascriptChango.html">${carritoA.length}<img src="carrito1.png" alt="50" width="25"> </a> `);}*/
-
-
-
 
 class gorrasLisas {
     constructor(id,descripcion, precio, cantidadG){
@@ -128,7 +120,8 @@ agregar=document.getElementById("19");
 agregar.addEventListener("click",()=>{productoAgregado(19)});
 agregar=document.getElementById("20");
 agregar.addEventListener("click",()=>{productoAgregado(20)});
-
+          
+ 
 
 //FUNCION QUE AGREGA PRODUCTOS AL CARRITO DE COMPRAS
 function productoAgregado(id){
@@ -156,7 +149,6 @@ function productoAgregado(id){
     }
   //SI EL LOCAL STORAGE ESTA VACIO, SUMO 1 UNIDAD AL PRODUCTO Y PUSHEO EL PRODUCTO AL CARRITO. LUEGO MUESTO EL ALERT PERSONALIZADO CON LA FUNCION MOSTRAR Y GUARDO EN LOCAL STORAGE EL CONTENIDO DE CARRITO.
     if (localStorage.carritoA==undefined ){
-     console.log("No hay nada en el carrito (undefined) pusheo el producto seleccionado");
      totalProductos[id-1].cantidadG=totalProductos[id-1].cantidadG+1;
      carritoA.push(totalProductos[id-1]);    }
      mostrar();
@@ -166,10 +158,7 @@ function productoAgregado(id){
 });
 
 
-    
 
 
 
-
-    
 

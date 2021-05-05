@@ -20,10 +20,10 @@ api.onreadystatechange=function(){
 }
 function vaciarCarrito(){
   $("#vaciarCarrito").on("click", function(){    
-
    
     $("#tabla").slideUp("slow",function(){    
-    $(`#tabla`).remove();  
+    $(`#tabla`).remove();
+    $("#precioDolar").remove();  
     $(`#totalImporteChango`).remove();
     $("#carroVacio").append(`<div>
     <h3 style="color:white ;text-align: center;">Por el momento usted no ha seleccionado ningun producto de nuestra tienda </h3>                                
@@ -39,16 +39,7 @@ function vaciarCarrito(){
 function finalizarCompra(){
   $("#finalizarCompra").on("click", function(){    
     
-    /*  swal({
-      title: "Importe a abonar",
-      text: "En ARS: \t\t\t\t\t\t$" + (total*dolar).toFixed(2) + "\n" + "En USD: $" + total,
-      icon: "success",
-      buttons: ["Volver", "Comprar"],   });   
-    */
-
-
-
-
+  
     swal({
       title: "Importe a abonar",
       text: "En ARS: \t\t\t\t\t\t$" + (total*dolar).toFixed(2) + "\n" + "En USD: $" + total,
@@ -69,7 +60,7 @@ function finalizarCompra(){
         $("#totalImporteChango").fadeOut("5000",function(){    
     
         })
-        
+        $("#precioDolar").remove(); 
     $("#formularioCompra").append(`  <form  class="form row g-3" style="margin-bottom:9%;" >
     <div class="col-md-6 " >
       <label for="inputNombre" class="form-label">Nombre</label>
@@ -109,30 +100,17 @@ function finalizarCompra(){
    
 
     <div class="col-12">
-      <button type="submit" class="btn btn-primary" style="margin:  10% 0px 10% 40%; background-color:yellow; color:black;">Enviar</button>
+      <button id="enviar" type="submit" class="btn btn-primary" style="margin:  10% 0px 10% 40%; background-color:yellow; color:black;">Enviar</button>
     </div>
   </form>`)    } 
     });
 
 
-
-
-
-
-
-
-    
-   
-      
-
- 
-      
-     
-                                                             
       });  
   
 
     };
+    
 $(document).ready(function(){
 
     
@@ -156,6 +134,8 @@ $("#carroVacio").append(`<div>
                   
 
 if(carritoA!=undefined){
+
+   $("#precioDolar").append(`<h4 style> Precio dolar hoy: $ ${dolar}  </h4>`)
     $("#tabla").append(`<tr  style="color:yellow; font-size:150%; "> <td>${"id"}</td>
                              <td>${"Producto"}</td>
                              <td>${"Importe"}</td>
@@ -173,9 +153,9 @@ if(carritoA!=undefined){
                                 <td id="${elem.id} "> ${elem.id}  </td>
                                 <td> ${elem.descripcion}  </td>
                                 <td style="width: 20%"> $ ${elem.precio} </td>
-                                <td><button style=" padding:1%; margin-right:15%"; class = "btn-xs btn-success " id="botonAgregar${elem.id}"> + </button></td>
+                                <td><button style=" padding:1%; margin-right:15%" id="botonAgregar${elem.id}"> + </button></td>
                                 <td id="CantidadG${elem.id}"> ${elem.cantidadG} </td>
-                                <td><button style=" padding:   1%; margin-left:15%" class = "btn-xs btn-warning" id="botonQuitar${elem.id}"> - </button></td>
+                                <td><button style=" padding:1%; margin-left:15%"  id="botonQuitar${elem.id}"> - </button></td>
                                 <td id="CantidadT${elem.id}"> $ ${elem.precio * elem.cantidadG} </td>
                                 <td><button class = "btn-xs btn-danger" id="botonEliminar${elem.id}"> x </button>   </td>
                                 ${total=total+(elem.cantidadG*elem.precio)}
@@ -191,9 +171,9 @@ if(carritoA!=undefined){
                                    $(`#CantidadG${elem.id}`).html(elem.cantidadG);
                                    $(`#CantidadT${elem.id}`).html("$ "+ (elem.cantidadG*elem.precio).toFixed(2));
                                    total=total+elem.precio;
-                                   $(`#totalImporteChango`).html(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
-                                   <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
-                                    </div>`) 
+                                   $(`#totalImporteChango`).html(`
+                                   <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 id="importe" style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+                                    `) 
                                    localStorage.setItem("carritoA",JSON.stringify(carritoA));
                                    
                                   vaciarCarrito();
@@ -208,9 +188,9 @@ if(carritoA!=undefined){
                                     $(`#CantidadG${elem.id}`).html(elem.cantidadG);
                                     $(`#CantidadT${elem.id}`).html("$ "+ (elem.cantidadG*elem.precio).toFixed(2));
                                     total=total-elem.precio;
-                                    $(`#totalImporteChango`).html(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
-                                    <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
-                                     </div>`) 
+                                    $(`#totalImporteChango`).html(`
+                                    <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 id="importe" style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+                                     `) 
                                     localStorage.setItem("carritoA",JSON.stringify(carritoA)); 
                                     vaciarCarrito();
                                     finalizarCompra(); 
@@ -225,9 +205,9 @@ if(carritoA!=undefined){
                                     $(`#producto${elem.id}`).remove();
                                     carritoA.splice(busquedaId,1);   
                                     total=total-(elem.precio*elem.cantidadG);                                
-                                    $(`#totalImporteChango`).html(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
-                                    <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 class="importeCompra" style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
-                                     </div>`) 
+                                    $(`#totalImporteChango`).html(`
+                                    <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 id="importe" class="importeCompra" style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+                                     `) 
                                     if(total===0){
                                         $(`#totalImporteChango`).remove();
                                         $("#carroVacio").append(`<div>
@@ -246,9 +226,9 @@ if(carritoA!=undefined){
 
                           
                 }
-                $(`#totalImporteChango`).html(`<div style="margin-left:20%; display: flex; justify-content: space-between;">
-                <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
-                 </div>`) 
+                $(`#totalImporteChango`).html(`
+                <button class="btn btn-secondary" id="vaciarCarrito">    VaciarCarrito  </button><h3 id="importe" style="color:white"; font-size:100px">Total Compra  $ ${total.toFixed(2)}</h3><button class = "btn btn-success" id="finalizarCompra" style="margin-right:40%">Finalizar Compra</button> 
+                 `) 
 
               }
         
@@ -256,4 +236,33 @@ if(carritoA!=undefined){
     
             vaciarCarrito();
             finalizarCompra();  
-    });
+         
+    }
+  
+    
+  
+    
+    );
+   
+
+    $(`#enviar`).on('click', function(){
+      
+      swal({
+        title: "Muchas gracias!",
+        text: "Este desarrollo esta en modo test para un Proyecto para CoderHouse",
+        icon: "success",
+        button: "Confirmar!",
+      })
+    
+        $(`#tabla`).remove();
+        $("#precioDolar").remove();  
+        $(`#totalImporteChango`).remove();
+        $("#carroVacio").append(`<div>
+        <h3 style="color:white ;text-align: center;">Por el momento usted no ha seleccionado ningun producto de nuestra tienda </h3>                                
+        </div>`)    
+        $(`#totalImporteChango`).html(` <h3  style="color:green ;text-align: center;">   <button class = "btn btn-secondary" id="vaciarCarrito" style="margin-right:40%">VaciarCarrito</button> Total Importe Carrito       $ ${total} </h3>                                
+        </div>`);   
+        window.localStorage.removeItem("carritoA"); 
+        alert("se cumple la funcion de enviar ")
+   })
+        
