@@ -3,15 +3,12 @@ function mostrar(){
     swal("Muchas gracias","El producto fue agregado exitosamente","success") ;
 }
 
-
-            
-
 //ANIMACION DEL LOGO DE LA EMPRESA
 $(".logo").animate({
     width: '150px',
     opacity: '1'},"slow", );
 
-//Declaramos la url del archivo JSON local
+//DECLARAMOS LA URL DEL ARCHIVO JSON LOCAL QUE TRAE LOS PRODUCTOS
 const URLJSON = "productos.json"
 //INTRODUCIMOS LOS PRODUCTOS AL DIV A TRAVES DEL ARCHIVO JSON
 $.getJSON(URLJSON, function (respuesta, estado) {
@@ -40,8 +37,7 @@ class gorrasLisas {
     this.descripcion=descripcion;
     this.precio=precio;
     this.cantidadG=cantidadG;}
- 
-}
+ }
 
 class carrito{
     constructor(descripcionCarrito,precioCarrito,cantidadCarrito){this.descripcionCarrito=descripcionCarrito;
@@ -120,8 +116,6 @@ agregar=document.getElementById("19");
 agregar.addEventListener("click",()=>{productoAgregado(19)});
 agregar=document.getElementById("20");
 agregar.addEventListener("click",()=>{productoAgregado(20)});
-          
- 
 
 //FUNCION QUE AGREGA PRODUCTOS AL CARRITO DE COMPRAS
 function productoAgregado(id){

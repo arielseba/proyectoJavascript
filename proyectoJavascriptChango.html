@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<!--meta-->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--link-->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="proyectoJavascript.css">
+		<link rel="shortcut icon" type="image/x-icon" href="img\icon.png" >
+		<!--titulo-->
+		<title>Club de las gorras</title>
+	</head>
 	
-	
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-	<link rel="stylesheet" href="proyectoJavascript.css">
-	<link rel="shortcut icon" type="image/x-icon" href="img\icon.png" >
-	
-	
-	
-    <title>Club de las gorras</title>
-</head>
-<body class="body">
-	
-		
+	<body class="body">
 		<!--NAV-->
 		<nav class="navbar navbar-expand-lg navbar-light "  >
 			<button  class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
@@ -31,77 +28,64 @@
 				<a class="nav-item nav-link col-1" style="margin-top: auto;font-size: 15px ;" href="formulario.html" >Contacto</a>
 				<a class="nav-item nav-link col-1" style="margin-top: auto;font-size: 15px ;" href="proyectoJavascriptChango.html" >Carrito</a>
 			</div>
-		
 		</nav>
-	<table class="tabla" id= "tabla"style="width: 90%;margin-top: 5% ; margin-left: 5%; bac">
-
-	
-		
-
+		<!--Se introduce un table para que traiga los productos seleccionados por el usuario-->
+		<table class="tabla" id= "tabla">
 		</table>
-			
-	
-	
-
-<div id="totalImporteChango" class="col-12"  style=" display: flex; margin-top: 5%; margin-left: 12%; "></div>
-<div id="carroVacio" style=" width: 100%;margin-top: 5%"></div>
-<div id="precioDolar" style="color: white; text-align: center;"></div>
-<div id="formularioCompra"></div>
-
-	<!--FOOTER-->
-	<footer id="footer" class="navbar navbar-light" style="background-color:yellow ; margin-top: 5%;height: 100%;"   >			
 		
-		<div class="row">
-			<div class="col-sm-12	col-md-5	col-lg-4"   style="margin-top: 2%;margin-bottom: 2%;">
-			<h3 style="text-align: center;" > <strong>Porque elegirnos?</strong></h3>
-			<p style="text-align: center;">Nos enfocamos en brindar un producto de excelencia.</p>
-			<p style="text-align: center;">Somos especialistas en la fabricacion de gorras hace mas de 20 años. Nos estamos renovando constantemente, creando modas constantemente.</p>
-		  </div>
+		<!--Se introduce un div para que traiga el importe total del carrito y los botones de vaciar carrito y finalizar compra-->
+		<div id="totalImporteChango" class="col-12"  style=" display: flex; margin-top: 5%;margin-bottom: 5%; justify-content: space-between; "></div>
+		<!--Se introduce un div para que traiga una leyenda, en caso de que el carrito este vacio-->
+		<div id="carroVacio"></div>
+		<!--Se introduce un div para que traiga la cotizacion del dolar actual, siendo esta traida a traves de una API-->
+		<div id="precioDolar" style="color: white;  text-align:center"></div>
+	
+		<!--FOOTER-->
+		<footer id="footer" class="navbar navbar-light" style="background-color:yellow ; margin-top: 50%;height: 100%;"   >			
+			<div class="row">
+				<div class="col-sm-12	col-md-5	col-lg-4"   style="margin-top: 2%;margin-bottom: 2%;">
+				<h3 style="text-align: center;" > <strong>Porque elegirnos?</strong></h3>
+				<p style="text-align: center;">Nos enfocamos en brindar un producto de excelencia.</p>
+				<p style="text-align: center;">Somos especialistas en la fabricacion de gorras hace mas de 20 años. Nos estamos renovando constantemente, creando modas constantemente.</p>
+				</div>
+					
+				<div class="col-sm-12	col-md-5	col-lg-4"  style="margin-top: 2%;margin-bottom: 2%;">
+					<h3 style="text-align: center;" > <strong> Contacto </strong></h3>
+					<p >Tel: 011-6860-2774</p>
+					<p > Direccion: Acoyte 2650</p>
+					<p >Mail: elclubdelasgorras@mail.com</p>
+				</div>
 				
-		  <div class="col-sm-12	col-md-5	col-lg-4"  style="margin-top: 2%;margin-bottom: 2%;">
-			<h3 style="text-align: center;" > <strong> Contacto </strong></h3>
-			<p >Tel: 011-6860-2774</p>
-			<p > Direccion: Acoyte 2650</p>
-			<p >Mail: elclubdelasgorras@mail.com</p>
-		  </div>
-				
-		  
-			<div  class="row letra_f col-sm-12	col-md-5	col-lg-4" style="align-items: center; " >
-			  <h3 style="text-align: center; "> <strong>Nuestras redes </strong></h3>
-			  
-				<div class="red-instagram " style="width: auto; padding: 6%;">
-				  <div><a href="https://www.instagram.com/sebastiandel87/?hl=es-la" ><img style="margin-left: 15%;"  src="img/logo_i.png " width="40"> 
-					<p style="color: black;">Instagram</p> </a>
-				  </div>
+				<div  class="row letra_f col-sm-12	col-md-5	col-lg-4" style="align-items: center; " >
+					<h3 style="text-align: center; "> <strong>Nuestras redes </strong></h3>
+					
+					<div class="red-instagram " style="width: auto; padding: 6%;">
+						<div><a href="https://www.instagram.com/sebastiandel87/?hl=es-la" ><img style="margin-left: 15%;"  src="img/logo_i.png " width="40"> 
+						<p style="color: black;">Instagram</p> </a>
+						</div>
+					</div>
+								
+					<div class= " red-facebook " style="width: auto; padding: 6%;">
+						<div  ><a href="https://www.facebook.com/profile.php?id=100067108516408"><img style="margin-left: 15%;" src="img/logo_f.png" width="40" >
+							<p style="color: black;">Facebook</p></a>
+						</div>
+					</div>
+								
+					<div class="red-whatsapp " style="width: auto; padding: 6%; ">
+						<div > <a href="https://api.whatsapp.com/send?phone=541168602774&text=Hola,%20queria%20consultar%20por%20una%20gorra."><img  style="margin-left: 15%;"	 src="img/logo_w.png" width="40"  > 
+							<p style="color: black;"> WhatsApp</p></a>
+						</div>	
+					</div>
 				</div>
-						
-				<div class= " red-facebook " style="width: auto; padding: 6%;">
-				  <div  ><a href="https://www.facebook.com/profile.php?id=100067108516408"><img style="margin-left: 15%;" src="img/logo_f.png" width="40" >
-					<p style="color: black;">Facebook</p></a>
-				  </div>
-				</div>
-						
-				<div class="red-whatsapp " style="width: auto; padding: 6%; ">
-				  <div > <a href="https://api.whatsapp.com/send?phone=541168602774&text=Hola,%20queria%20consultar%20por%20una%20gorra."><img  style="margin-left: 15%;"	 src="img/logo_w.png" width="40"  > 
-					<p style="color: black;"> WhatsApp</p></a>
-				  </div>	
-				</div>
-			 
 			</div>
-		  
-		</div>
-	  
-	</footer>	
+		</footer>	
 
-
-
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="proyectoJavascriptChango.js"></script>
-<script src="proyectoJavascript.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-<script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" > </script> <!--scriot de alerts personalizados-->
-		
-
-</body>
-
+		<!--script-->
+		<script src="js/jquery-3.6.0.min.js"></script>
+		<script src="proyectoJavascriptChango.js"></script>
+		<script src="proyectoJavascript.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+		<script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" > </script> <!--script de alerts personalizados-->
+	
+	</body>
 </html>

@@ -9,41 +9,38 @@
 	<link rel="stylesheet" href="proyectoJavascript.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	<link rel="shortcut icon" type="image/x-icon" href="img\icon.png" >
-   		   
+   	 <!--titulo-->
     <title>El Club de las Gorras</title>
 </head>
 <!--Se introduce un div para que traiga los productos desde un arhivo JSON-->
 <body class="body">
-		<div class="container" >
-			<div class="row" id="cargaProductos"></div>
-
-		</div>
+	<div class="container" >
+		<div class="row" id="cargaProductos"></div>
+	</div>
 		<!--NAV-->
-		<nav class="navbar navbar-expand-lg navbar-light "  >
-			<button  class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
-				<span style="background-color: white;" class="navbar-toggler-icon"></span>
-			</button>
-			<img class="logo" src="img/logo.png" style="margin-left: 5%;margin-right: 5%;"  height=""  >
-		
-			<div class="collapse navbar-collapse"  id="navbarSupportedContent">
-				<a href="" class="col-6"></a>
-				<a class="nav-item nav-link active col-1" style=" margin-top: auto; font-size: 15px; " aria-current="page" href="index.html">Home</a></li>
-				<a class="nav-item nav-link col-1" style="margin-top: auto;font-size: 15px;" href="productos.html">Productos</a>
-				<a class="nav-item nav-link col-1" style="margin-top: auto;font-size: 15px ;" href="formulario.html" >Contacto</a>
-				<a class="nav-item nav-link col-1" style="margin-top: auto;font-size: 15px ;" href="proyectoJavascriptChango.html" >Carrito</a>
-			</div>
-		
-		</nav>
+	<nav class="navbar navbar-expand-lg navbar-light "  >
+		<button  class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+			<span style="background-color: white;" class="navbar-toggler-icon"></span>
+		</button>
+		<img class="logo" src="img/logo.png" style="margin-left: 5%;margin-right: 5%;"  height=""  >
+		<div class="collapse navbar-collapse"  id="navbarSupportedContent">
+			<a href="" class="col-6"></a>
+			<a class="nav-item nav-link active col-1" style=" margin-top: auto; font-size: 15px; " aria-current="page" href="index.html">Home</a></li>
+			<a class="nav-item nav-link col-1" style="margin-top: auto;font-size: 15px;" href="productos.html">Productos</a>
+			<a class="nav-item nav-link col-1" style="margin-top: auto;font-size: 15px ;" href="formulario.html" >Contacto</a>
+			<a class="nav-item nav-link col-1" style="margin-top: auto;font-size: 15px ;" href="proyectoJavascriptChango.html" >Carrito</a>
+		</div>
+	</nav>
 
-		<!--Se introduce Carousel con Imagenes-->
-		<div class="container" style="margin-left: auto;margin-right: auto; margin-top: 5%;" >
-			<div  id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-				<div class="carousel-indicators">
+<!--Se introduce Carousel con Imagenes-->
+	<div class="container" style="margin-left: auto;margin-right: auto; margin-top: 5%;" >
+		<div  id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" >
+			<div class="carousel-indicators">
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
 				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-				</div>
-				<div  class="carousel-inner">
+			</div>
+			<div  class="carousel-inner">
 				<div class="carousel-item active">
 					<img src="Nueva carpeta/x0.jpg" class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
@@ -62,71 +59,61 @@
 					<h5>Coleccion Running</h5>
 					</div>
 				</div>
-				</div>
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Previous</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
 				<span class="carousel-control-next-icon" aria-hidden="true"></span>
 				<span class="visually-hidden">Next</span>
-				</button>
-			</div>
+			</button>
 		</div>
+	</div>
 	<!--carrousel-->
 	<div class="container" >
-		<div  class="cargaProductos row" id="cargaProductos" style="margin-top: 10%;">
-			
-		</div>
+		<div  class="cargaProductos row" id="cargaProductos" style="margin-top: 10%;"></div>
 	</div>
 	<!--FOOTER-->
 	<footer id="footer" class="navbar navbar-light" style="background-color:yellow ; margin-top: 5%;height: 100%;"   >			
-		
-			<div class="row">
-					<div class="col-sm-12	col-md-5	col-lg-4"   style="margin-top: 2%;margin-bottom: 2%;">
-					<h3 style="text-align: center;" > <strong>Porque elegirnos?</strong></h3>
-					<p style="text-align: center;">Nos enfocamos en brindar un producto de excelencia.</p>
-					<p style="text-align: center;">Somos especialistas en la fabricacion de gorras hace mas de 20 años. Nos estamos renovando constantemente, creando modas constantemente.</p>
-				</div>
-							
-				<div class="col-sm-12	col-md-5	col-lg-4"  style="margin-top: 2%;margin-bottom: 2%;">
-					<h3 style="text-align: center;" > <strong> Contacto </strong></h3>
-					<p >Tel: 011-6860-2774</p>
-					<p > Direccion: Acoyte 2650</p>
-					<p >Mail: elclubdelasgorras@mail.com</p>
-				</div>
-							
-				
-					<div  class="row letra_f col-sm-12	col-md-5	col-lg-4" style="align-items: center; " >
-						<h3 style="text-align: center; "> <strong>Nuestras redes </strong></h3>
-						
-							<div class="red-instagram " style="width: auto; padding: 6%;">
-								<div><a href="https://www.instagram.com/sebastiandel87/?hl=es-la" ><img style="margin-left: 15%;"  src="img/logo_i.png " width="40"> 
-									<p style="color: black;">Instagram</p> </a>
-								</div>
-							</div>
-											
-							<div class= " red-facebook " style="width: auto; padding: 6%;">
-								<div  ><a href="https://www.facebook.com/profile.php?id=100067108516408"><img style="margin-left: 15%;" src="img/logo_f.png" width="40" >
-									<p style="color: black;">Facebook</p></a>
-								</div>
-							</div>
-											
-							<div class="red-whatsapp " style="width: auto; padding: 6%; ">
-								<div > <a href="https://api.whatsapp.com/send?phone=541168602774&text=Hola,%20queria%20consultar%20por%20una%20gorra."><img  style="margin-left: 15%;"	 src="img/logo_w.png" width="40"  > 
-									<p style="color: black;"> WhatsApp</p></a>
-								</div>	
-							</div>
-					 
-					</div>
-				
+		<div class="row">
+			<div class="col-sm-12	col-md-5	col-lg-4"   style="margin-top: 2%;margin-bottom: 2%;">
+				<h3 style="text-align: center;" > <strong>Porque elegirnos?</strong></h3>
+				<p style="text-align: center;">Nos enfocamos en brindar un producto de excelencia.</p>
+				<p style="text-align: center;">Somos especialistas en la fabricacion de gorras hace mas de 20 años. Nos estamos renovando constantemente, creando modas constantemente.</p>
 			</div>
-		
+							
+			<div class="col-sm-12	col-md-5	col-lg-4"  style="margin-top: 2%;margin-bottom: 2%;">
+				<h3 style="text-align: center;" > <strong> Contacto </strong></h3>
+				<p >Tel: 011-6860-2774</p>
+				<p > Direccion: Acoyte 2650</p>
+				<p >Mail: elclubdelasgorras@mail.com</p>
+			</div>
+						
+			<div  class="row letra_f col-sm-12	col-md-5	col-lg-4" style="align-items: center; " >
+				<h3 style="text-align: center; "> <strong>Nuestras redes </strong></h3>
+				<div class="red-instagram " style="width: auto; padding: 6%;">
+					<div><a href="https://www.instagram.com/sebastiandel87/?hl=es-la" ><img style="margin-left: 15%;"  src="img/logo_i.png " width="40"> 
+						<p style="color: black;">Instagram</p> </a>
+					</div>
+				</div>
+									
+				<div class= " red-facebook " style="width: auto; padding: 6%;">
+					<div  ><a href="https://www.facebook.com/profile.php?id=100067108516408"><img style="margin-left: 15%;" src="img/logo_f.png" width="40" >
+						<p style="color: black;">Facebook</p></a>
+					</div>
+				</div>
+									
+				<div class="red-whatsapp " style="width: auto; padding: 6%; ">
+					<div > <a href="https://api.whatsapp.com/send?phone=541168602774&text=Hola,%20queria%20consultar%20por%20una%20gorra."><img  style="margin-left: 15%;"	 src="img/logo_w.png" width="40"  > 
+						<p style="color: black;"> WhatsApp</p></a>
+					</div>	
+				</div>
+			</div>
+		</div>
 	</footer>	
 
-
-
-		<!--SCRIPTS-->
+	<!--SCRIPTS-->
 		<script src="js/jquery-3.6.0.min.js"></script>
 		<script src="proyectoJavascriptChango.js"></script>
 		<script src="proyectoJavascript.js"></script>

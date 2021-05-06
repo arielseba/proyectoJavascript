@@ -1,91 +1,91 @@
-
 .carritoAnimacion{
-    font-size: 50px;
-    margin-top: 20px;
-    text-align: center  ;
-    
+font-size: 50px;
+margin-top: 20px;
+text-align: center  ;
 }
+
 a{
-    display: flex;
-    color: white;
-    
+display: flex;
+color: white;
 }
+
 .logo{
-    width: 50px;
-    opacity: 0.3;
-   justify-content: end;
+width: 50px;
+opacity: 0.3;
+justify-content: end;
 }
+
 .nav1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
 }
+
 .footer1{
-    display: flex;
-    justify-content:center;
-    align-items: center;
-    margin-top: 100px;
-    background-color:yellow;
-    justify-content: space-between;
-    
-   }
+display: flex;
+justify-content:center;
+align-items: center;
+margin-top: 100px;
+background-color:yellow;
+justify-content: space-between;
+}
+
 .pFooter{
-    text-align: justify;
-    margin: 20px;
+text-align: justify;
+margin: 20px;
 }
+
 .nav__ul{
-    list-style: none;
+list-style: none;
 }
+
 .nav__ul li{
-    display: inline-block;
-     
+display: inline-block;
 }
+
 .nav__ul li a{
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace  ;
-    color: white;
-    padding: 50px 50px 50px 50px;
+font-size: 20px;
+font-family: 'Courier New', Courier, monospace  ;
+color: white;
+padding: 50px 50px 50px 50px;
 }
+
 .card{
-    margin: 20px;
-    height:380px;
-    width:250px;
-    border: solid 1px white;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(15, 15, 15);
-    color: white;
-    
+margin: 20px;
+height:380px;
+width:250px;
+border: solid 1px white;
+justify-content: center;
+align-items: center;
+background-color: rgb(15, 15, 15);
+color: white;
 }
+
 .imgcard{
 height: 200px;
 width: 200px;
-
 }
+
 p{
     text-align: center;
 }
 
-
 .thTitulo{
 color:white;
 font-size: 150%;
-
 }
+
 td{
     text-align: center;
     width: auto;
-    
-    
-}
+    }
 
 .bodyCarrito{
     background-image: url('carrito.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-   
-}
+   }
 
 .body{
     background-color: rgb(15, 15, 15);
@@ -104,8 +104,15 @@ background-color: rgb(15, 15, 15);
 border: solid 1px white;
 color:white; 
 }
-
-
+.tabla {
+    width: 90%;
+    margin-top: 8% ; 
+    margin-left: 5%;
+}
+#carroVacio{
+    width: 100%;
+    
+}
 /*mobile*/
 @media screen and (max-width:600px){
     .card{
@@ -114,13 +121,14 @@ color:white;
         margin-right: auto;
         margin-left: auto;
     }
-     .form{
+    .form{
         margin: auto ;
         width:80%;
         background-color: rgb(15, 15, 15);
         border: solid 1px white;
         color:white; 
-        }
+    }
+
     tr{
     width: auto;
     }
@@ -147,9 +155,28 @@ color:white;
         font-size: 15px;
        
     }
+   .carousel{
+       margin-top: 30%;
+       margin-bottom: 60%;
+    }
+    .tabla {
+        margin-top: 20% ; 
+        margin-bottom: 15%;
+    }
     
-  
-  
+    #botonQuitar{
+    padding:1%;
+    margin-left:15%;
+    }
+    
+    #botonAgregar{
+    padding:1%;
+    margin-right:15%;
+    }
+    #carroVacio{
+    margin-top: 15% ;
+    margin-bottom: 150%;
+    }
   }
  /*tablet*/
   @media screen and (min-width:600px ){
@@ -171,10 +198,8 @@ color:white;
         height: 5%;
         font-size: 10px;
         }
-        
-       
-      
-        
+    
+           
     }
     @media screen and ( min-width:768px ){
         .card{
@@ -191,8 +216,7 @@ color:white;
         justify-content: center;
         margin-right: 1%;
         margin-left: 3%;
-       
-    }
+        }
     #finalizarCompra{
         display: inline;
         margin-left: auto;
@@ -200,8 +224,7 @@ color:white;
         font-size: auto;
         margin-bottom: auto;
         margin-top: auto;
-        
-    }
+        }
     #vaciarCarrito{
         display: inline;
         margin-left: auto;
@@ -211,6 +234,5 @@ color:white;
         margin-bottom: auto;
         margin-top: auto; 
     }
-   
-      
+         
   }
